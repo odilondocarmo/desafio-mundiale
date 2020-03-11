@@ -18,20 +18,20 @@ Response - O resposta deve ser um vetor, contendo no máximo o "limit" especific
     "state" - Estado do produto
 
 Response: *[*
-    *{*
-        *"name": String,*
-        *"link": String,*
-        *"price": Number,*
-        *"store": String,*
-        *"state": String*
-    *}*
+  *{*
+    *"name": String,*
+    *"link": String,*
+    *"price": Number,*
+    *"store": String,*
+    *"state": String*
+  *}*
 *]*
 
 ***Estratégia***
 
 Para criar esse crawler, são utilizadas as bibliotecas:
-    *EXPRESS para lidar com as requisições e as respostas,*
-    *CHEERIO para tratar a pagina de destino,*
+*EXPRESS para lidar com as requisições e as respostas,*
+*CHEERIO para tratar a pagina de destino,*
 
 As rotas são controladas pelo arquivo: ./src/routes.js
 O servidor e seus parâmetros são controlados pelo arquivo: ./src/server.js
