@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/odilondocarmo/desafio-mundiale/issues"
   },
-  "homepage": "https://github.com/odilondocarmo/desafio-mundiale#readme"
+  "homepage": "https://github.com/odilondocarmo/desafio-mundiale#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1"
+  }
 }
