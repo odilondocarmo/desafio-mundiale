@@ -17,7 +17,7 @@ class CrawlerMercadoLivreController{
             itemsArray = itemsArray.concat(data);
         }while(data && itemsArray.length < limit)
         
-        return res.json(itemsArray.length);
+        return res.json(itemsArray);
     }
 }
 
