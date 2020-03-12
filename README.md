@@ -5,9 +5,13 @@ O desafio proposto é basicamente efetuar uma busca no site mercadolivre.com.br 
 
 Request - um POST onde no body contem um JSON onde search é o termo da busca e o limit é a quantidade de registros maximos.
 
-Request: *{*
-    *"search": String,*
-    *"limit": Int*
+Request:
+
+*{*
+
+ *"search": String,*
+
+ *"limit": Int*
 *}*
 
 Response - O resposta deve ser um vetor, contendo no máximo o "limit" especificado na request, onde cada posição desse vetor contém:
@@ -17,14 +21,23 @@ Response - O resposta deve ser um vetor, contendo no máximo o "limit" especific
     "store" - Nome da loja
     "state" - Estado do produto
 
-Response: *[*
-  *{*
-    *"name": String,*
-    *"link": String,*
-    *"price": Number,*
-    *"store": String,*
-    *"state": String*
-  *}*
+Response: 
+*[*
+
+ *{*
+
+   *"name": String,*
+
+   *"link": String,*
+
+   *"price": Number,*
+
+   *"store": String,*
+
+   *"state": String*
+
+ *}*
+
 *]*
 
 ***Estratégia***
@@ -40,6 +53,7 @@ Toda a requisição é tratada no controller: ./src/controllers/CrawlerMercadoLi
 Toda a lógica de tratamento dos dados: ./src/utils/LoadPageData.js
 
 **Suporte à multiplas páginas**
+
 Este script possui suporte à multiplas páginas de forma dinâmica, basta digitar um valor acima do limite de paginas (48 normalmente) e ele vai conseguir efetuar a busca, entretanto pode não ser performático, devido ao método de coleta de dados (via crawler). Para coletar 49 items, a pagina é carregada 2x.
 Seguindo a logica de CEIL(48 / Quantidade de Items).
 Não realizei análises de complexidade do algoritmo para verificar a possibilidade de melhoria no próprio código.
