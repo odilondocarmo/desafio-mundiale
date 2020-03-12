@@ -3,12 +3,16 @@ const cheerio = require('cheerio');
 
 class LoadPageData{
     async load(search, currLength, limit){
+        // verificar se o tamanho atual é maior que o limite, caso verdadeiro, sai da função retornando Null
         if(currLength > limit){
             console.log('Verify the currLength configuration.')
             return null;
         }
+        /* Caso o tamanho atual seja zero, não é necessário alterar a busca,
+        caso contrário, a busca é alterada para o valor atual + 1, se for inferior ao limite
+        A sintaxe da busca caso seja superior ao valor da pag. [Busca]_Desde_[currLength+1]*/
         if(currLength > 0) {
-            search = `${search}_${
+            search = `${search}_Desde_${
                 currLength + 1 < limit ? currLength + 1 : limit
             }`;
         }
