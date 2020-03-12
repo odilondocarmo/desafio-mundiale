@@ -31,12 +31,26 @@ Response: *[*
 
 Para criar esse crawler, são utilizadas as bibliotecas:
 *EXPRESS para lidar com as requisições e as respostas,*
-*CHEERIO para tratar a pagina de destino,*
+*AXIOS para efetuar a coleta do HTML da pagina,* 
+*CHEERIO para tratar a pagina de destino*
 
 As rotas são controladas pelo arquivo: ./src/routes.js
 O servidor e seus parâmetros são controlados pelo arquivo: ./src/server.js
-Toda a lógica será colocada no controller: ./src/controllers/CrawlerMercadoLivreController.js
+Toda a requisição é tratada no controller: ./src/controllers/CrawlerMercadoLivreController.js
+Toda a lógica de tratamento dos dados: ./src/utils/LoadPageData.js
 
-A requisição para o mercado livre é feita de forma nativa (sem libs), para evitar que o projeto fique desnecessáriamente maior, assim como toda a validação de entrada.
+**Suporte à multiplas páginas**
+Este script possui suporte à multiplas páginas de forma dinâmica, basta digitar um valor acima do limite de paginas (48 normalmente) e ele vai conseguir efetuar a busca, entretanto pode não ser performático, devido ao método de coleta de dados (via crawler). Para coletar 49 items, a pagina é carregada 2x.
+Seguindo a logica de CEIL(48 / Quantidade de Items).
+Não realizei análises de complexidade do algoritmo para verificar a possibilidade de melhoria no próprio código.
+Nos testes, para uma consulta:
+48 itens -> 1.8 segundos;
+100 itens -> 5.9 segundos;
+480 itens -> 16.7 segundos;
 
 Versão do nodeJS utilizada: v12.14.1
+
+Libs:
+"axios": "^0.19.2",
+"cheerio": "^1.0.0-rc.3",
+"express": "^4.17.1"
