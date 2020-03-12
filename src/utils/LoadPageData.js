@@ -26,7 +26,8 @@ class LoadPageData{
             const itemValue = `${$(this)
                 .find('div.rowItem .item__info .item__price .price__fraction')
                 .text()
-                .trim()}.${$(this)
+                .trim()
+                .replace('.','')}.${$(this)
                     .find('div.rowItem .item__info .item__price .price__decimals')
                     .text()
                     .trim()}`;
