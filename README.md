@@ -12,6 +12,7 @@ Request:
  *"search": String,*
 
  *"limit": Int*
+
 *}*
 
 Response - O resposta deve ser um vetor, contendo no máximo o "limit" especificado na request, onde cada posição desse vetor contém:
@@ -68,3 +69,12 @@ Libs:
 "axios": "^0.19.2",
 "cheerio": "^1.0.0-rc.3",
 "express": "^4.17.1"
+
+
+***Iniciar o servidor***
+
+*node index.js*
+
+***Rotas para utilização LOCAL:***
+
+*http://localhost:3333/search*
