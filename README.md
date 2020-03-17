@@ -1,20 +1,40 @@
-***Desafio Mundiale***
+## Desafio Mundiale
+
+---
+## Teste a API
+
+POST https://desafio-mundiale.herokuapp.com/search
+
+Um deploy foi realizado no Heroku para testes.
+
+---
+
+***Iniciar o servidor (local)***
+
+*node index.js*
+
+***Rota para utilização LOCAL:***
+
+*POST http://localhost:3333/search*
+
+## Introdução
 
 O desafio proposto é basicamente efetuar uma busca no site mercadolivre.com.br e retornar alguns dados seguindo o padrão:
 
 
 Request - um POST onde no body contem um JSON onde search é o termo da busca e o limit é a quantidade de registros maximos.
 
-Request:
+---
+## Request:
+```javascript
+{
+    "search": String,
+    "limit": Int,
+}
+```
+---
 
-*{*
-
- *"search": String,*
-
- *"limit": Int*
-
-*}*
-
+## Response: 
 Response - O resposta deve ser um vetor, contendo no máximo o "limit" especificado na request, onde cada posição desse vetor contém:
     "name" - Nome do produto
     "link" - Link do produto
@@ -22,26 +42,19 @@ Response - O resposta deve ser um vetor, contendo no máximo o "limit" especific
     "store" - Nome da loja
     "state" - Estado do produto
 
-Response: 
-*[*
 
- *{*
-
-   *"name": String,*
-
-   *"link": String,*
-
-   *"price": Number,*
-
-   *"store": String,*
-
-   *"state": String*
-
- *}*
-
-*]*
-
-***Estratégia***
+```javascript
+[
+ {
+   "name": String,
+   "link": String,
+   "price": Number,
+   "store": String,
+   "state": String
+ }
+]
+```
+## Estratégia
 
 Para criar esse crawler, são utilizadas as bibliotecas:
 *EXPRESS para lidar com as requisições e as respostas,*
@@ -53,7 +66,7 @@ O servidor e seus parâmetros são controlados pelo arquivo: ./src/server.js
 Toda a requisição é tratada no controller: ./src/controllers/CrawlerMercadoLivreController.js
 Toda a lógica de tratamento dos dados: ./src/utils/LoadPageData.js
 
-**Suporte à multiplas páginas**
+## Suporte à multiplas páginas
 
 Este script possui suporte à multiplas páginas de forma dinâmica, basta digitar um valor acima do limite de itens por pagina (48 normalmente) e ele vai conseguir efetuar a busca, entretanto pode não ser performático, devido ao método de coleta de dados (via crawler). Para coletar 49 items, a pagina é carregada 2x.
 Seguindo a logica de CEIL(48 / Quantidade de Items).
@@ -66,15 +79,10 @@ Nos testes, para uma consulta:
 Versão do nodeJS utilizada: v12.14.1
 
 Libs:
-"axios": "^0.19.2",
-"cheerio": "^1.0.0-rc.3",
+"axios": "^0.19.2"
+"cheerio": "^1.0.0-rc.3"
 "express": "^4.17.1"
+"cors": "^2.8.5"
 
 
-***Iniciar o servidor***
 
-*node index.js*
-
-***Rotas para utilização LOCAL:***
-
-*http://localhost:3333/search*
