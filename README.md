@@ -55,7 +55,7 @@ Toda a lógica de tratamento dos dados: ./src/utils/LoadPageData.js
 
 **Suporte à multiplas páginas**
 
-Este script possui suporte à multiplas páginas de forma dinâmica, basta digitar um valor acima do limite de paginas (48 normalmente) e ele vai conseguir efetuar a busca, entretanto pode não ser performático, devido ao método de coleta de dados (via crawler). Para coletar 49 items, a pagina é carregada 2x.
+Este script possui suporte à multiplas páginas de forma dinâmica, basta digitar um valor acima do limite de itens por pagina (48 normalmente) e ele vai conseguir efetuar a busca, entretanto pode não ser performático, devido ao método de coleta de dados (via crawler). Para coletar 49 items, a pagina é carregada 2x.
 Seguindo a logica de CEIL(48 / Quantidade de Items).
 Não realizei análises de complexidade do algoritmo para verificar a possibilidade de melhoria no próprio código.
 Nos testes, para uma consulta:
