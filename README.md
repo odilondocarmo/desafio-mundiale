@@ -3,7 +3,7 @@
 ---
 ## Teste a API
 
-POST https://desafio-mundiale.herokuapp.com/search
+` POST https://desafio-mundiale.herokuapp.com/search `
 
 Um deploy foi realizado no Heroku para testes.
 
@@ -11,11 +11,11 @@ Um deploy foi realizado no Heroku para testes.
 
 ***Iniciar o servidor (local)***
 
-*node index.js*
+` node index.js `
 
 ***Rota para utilização LOCAL:***
 
-*POST http://localhost:3333/search*
+` POST http://localhost:3333/search `
 
 ## Introdução
 
@@ -76,13 +76,13 @@ Nos testes, para uma consulta:
 100 itens -> 5.9 segundos;
 480 itens -> 16.7 segundos;
 
-Versão do nodeJS utilizada: v12.14.1
-
+` Versão do nodeJS utilizada: v12.14.1 `
+```shell
 Libs:
 "axios": "^0.19.2"
 "cheerio": "^1.0.0-rc.3"
 "express": "^4.17.1"
-"cors": "^2.8.5"
+"cors": "^2.8.5" ```
 
 
 
